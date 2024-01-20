@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA7A24082B5C25F900D08129 /* gpsmemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A24072B5C25F900D08129 /* gpsmemoApp.swift */; };
+		AA7A240A2B5C25F900D08129 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A24092B5C25F900D08129 /* ContentView.swift */; };
+		AA7A240C2B5C25FA00D08129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7A240B2B5C25FA00D08129 /* Assets.xcassets */; };
+		AA7A240F2B5C25FA00D08129 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7A240E2B5C25FA00D08129 /* Preview Assets.xcassets */; };
+		AA7A24192B5C25FA00D08129 /* gpsmemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A24182B5C25FA00D08129 /* gpsmemoTests.swift */; };
+		AA7A24232B5C25FA00D08129 /* gpsmemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A24222B5C25FA00D08129 /* gpsmemoUITests.swift */; };
+		AA7A24252B5C25FA00D08129 /* gpsmemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A24242B5C25FA00D08129 /* gpsmemoUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA7A24152B5C25FA00D08129 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA7A23FC2B5C25F900D08129 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA7A24032B5C25F900D08129;
+			remoteInfo = gpsmemo;
+		};
+		AA7A241F2B5C25FA00D08129 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA7A23FC2B5C25F900D08129 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA7A24032B5C25F900D08129;
+			remoteInfo = gpsmemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA7A24042B5C25F900D08129 /* gpsmemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gpsmemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA7A24072B5C25F900D08129 /* gpsmemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpsmemoApp.swift; sourceTree = "<group>"; };
+		AA7A24092B5C25F900D08129 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AA7A240B2B5C25FA00D08129 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA7A240E2B5C25FA00D08129 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AA7A24142B5C25FA00D08129 /* gpsmemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gpsmemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA7A24182B5C25FA00D08129 /* gpsmemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpsmemoTests.swift; sourceTree = "<group>"; };
+		AA7A241E2B5C25FA00D08129 /* gpsmemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gpsmemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA7A24222B5C25FA00D08129 /* gpsmemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpsmemoUITests.swift; sourceTree = "<group>"; };
+		AA7A24242B5C25FA00D08129 /* gpsmemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpsmemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA7A24012B5C25F900D08129 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA7A24112B5C25FA00D08129 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA7A241B2B5C25FA00D08129 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA7A23FB2B5C25F900D08129 = {
+			isa = PBXGroup;
+			children = (
+				AA7A24062B5C25F900D08129 /* gpsmemo */,
+				AA7A24172B5C25FA00D08129 /* gpsmemoTests */,
+				AA7A24212B5C25FA00D08129 /* gpsmemoUITests */,
+				AA7A24052B5C25F900D08129 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA7A24052B5C25F900D08129 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA7A24042B5C25F900D08129 /* gpsmemo.app */,
+				AA7A24142B5C25FA00D08129 /* gpsmemoTests.xctest */,
+				AA7A241E2B5C25FA00D08129 /* gpsmemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA7A24062B5C25F900D08129 /* gpsmemo */ = {
+			isa = PBXGroup;
+			children = (
+				AA7A24072B5C25F900D08129 /* gpsmemoApp.swift */,
+				AA7A24092B5C25F900D08129 /* ContentView.swift */,
+				AA7A240B2B5C25FA00D08129 /* Assets.xcassets */,
+				AA7A240D2B5C25FA00D08129 /* Preview Content */,
+			);
+			path = gpsmemo;
+			sourceTree = "<group>";
+		};
+		AA7A240D2B5C25FA00D08129 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AA7A240E2B5C25FA00D08129 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AA7A24172B5C25FA00D08129 /* gpsmemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA7A24182B5C25FA00D08129 /* gpsmemoTests.swift */,
+			);
+			path = gpsmemoTests;
+			sourceTree = "<group>";
+		};
+		AA7A24212B5C25FA00D08129 /* gpsmemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AA7A24222B5C25FA00D08129 /* gpsmemoUITests.swift */,
+				AA7A24242B5C25FA00D08129 /* gpsmemoUITestsLaunchTests.swift */,
+			);
+			path = gpsmemoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA7A24032B5C25F900D08129 /* gpsmemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA7A24282B5C25FA00D08129 /* Build configuration list for PBXNativeTarget "gpsmemo" */;
+			buildPhases = (
+				AA7A24002B5C25F900D08129 /* Sources */,
+				AA7A24012B5C25F900D08129 /* Frameworks */,
+				AA7A24022B5C25F900D08129 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gpsmemo;
+			productName = gpsmemo;
+			productReference = AA7A24042B5C25F900D08129 /* gpsmemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA7A24132B5C25FA00D08129 /* gpsmemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA7A242B2B5C25FA00D08129 /* Build configuration list for PBXNativeTarget "gpsmemoTests" */;
+			buildPhases = (
+				AA7A24102B5C25FA00D08129 /* Sources */,
+				AA7A24112B5C25FA00D08129 /* Frameworks */,
+				AA7A24122B5C25FA00D08129 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA7A24162B5C25FA00D08129 /* PBXTargetDependency */,
+			);
+			name = gpsmemoTests;
+			productName = gpsmemoTests;
+			productReference = AA7A24142B5C25FA00D08129 /* gpsmemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AA7A241D2B5C25FA00D08129 /* gpsmemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA7A242E2B5C25FA00D08129 /* Build configuration list for PBXNativeTarget "gpsmemoUITests" */;
+			buildPhases = (
+				AA7A241A2B5C25FA00D08129 /* Sources */,
+				AA7A241B2B5C25FA00D08129 /* Frameworks */,
+				AA7A241C2B5C25FA00D08129 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA7A24202B5C25FA00D08129 /* PBXTargetDependency */,
+			);
+			name = gpsmemoUITests;
+			productName = gpsmemoUITests;
+			productReference = AA7A241E2B5C25FA00D08129 /* gpsmemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA7A23FC2B5C25F900D08129 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					AA7A24032B5C25F900D08129 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					AA7A24132B5C25FA00D08129 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = AA7A24032B5C25F900D08129;
+					};
+					AA7A241D2B5C25FA00D08129 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = AA7A24032B5C25F900D08129;
+					};
+				};
+			};
+			buildConfigurationList = AA7A23FF2B5C25F900D08129 /* Build configuration list for PBXProject "gpsmemo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA7A23FB2B5C25F900D08129;
+			productRefGroup = AA7A24052B5C25F900D08129 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA7A24032B5C25F900D08129 /* gpsmemo */,
+				AA7A24132B5C25FA00D08129 /* gpsmemoTests */,
+				AA7A241D2B5C25FA00D08129 /* gpsmemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA7A24022B5C25F900D08129 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA7A240F2B5C25FA00D08129 /* Preview Assets.xcassets in Resources */,
+				AA7A240C2B5C25FA00D08129 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA7A24122B5C25FA00D08129 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA7A241C2B5C25FA00D08129 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA7A24002B5C25F900D08129 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA7A240A2B5C25F900D08129 /* ContentView.swift in Sources */,
+				AA7A24082B5C25F900D08129 /* gpsmemoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA7A24102B5C25FA00D08129 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA7A24192B5C25FA00D08129 /* gpsmemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA7A241A2B5C25FA00D08129 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA7A24232B5C25FA00D08129 /* gpsmemoUITests.swift in Sources */,
+				AA7A24252B5C25FA00D08129 /* gpsmemoUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA7A24162B5C25FA00D08129 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA7A24032B5C25F900D08129 /* gpsmemo */;
+			targetProxy = AA7A24152B5C25FA00D08129 /* PBXContainerItemProxy */;
+		};
+		AA7A24202B5C25FA00D08129 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA7A24032B5C25F900D08129 /* gpsmemo */;
+			targetProxy = AA7A241F2B5C25FA00D08129 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AA7A24262B5C25FA00D08129 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA7A24272B5C25FA00D08129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA7A24292B5C25FA00D08129 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"gpsmemo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = memo.gpsmemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA7A242A2B5C25FA00D08129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"gpsmemo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = memo.gpsmemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AA7A242C2B5C25FA00D08129 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = memo.gpsmemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gpsmemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gpsmemo";
+			};
+			name = Debug;
+		};
+		AA7A242D2B5C25FA00D08129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = memo.gpsmemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gpsmemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gpsmemo";
+			};
+			name = Release;
+		};
+		AA7A242F2B5C25FA00D08129 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = memo.gpsmemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gpsmemo;
+			};
+			name = Debug;
+		};
+		AA7A24302B5C25FA00D08129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = memo.gpsmemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gpsmemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA7A23FF2B5C25F900D08129 /* Build configuration list for PBXProject "gpsmemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA7A24262B5C25FA00D08129 /* Debug */,
+				AA7A24272B5C25FA00D08129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA7A24282B5C25FA00D08129 /* Build configuration list for PBXNativeTarget "gpsmemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA7A24292B5C25FA00D08129 /* Debug */,
+				AA7A242A2B5C25FA00D08129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA7A242B2B5C25FA00D08129 /* Build configuration list for PBXNativeTarget "gpsmemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA7A242C2B5C25FA00D08129 /* Debug */,
+				AA7A242D2B5C25FA00D08129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA7A242E2B5C25FA00D08129 /* Build configuration list for PBXNativeTarget "gpsmemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA7A242F2B5C25FA00D08129 /* Debug */,
+				AA7A24302B5C25FA00D08129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA7A23FC2B5C25F900D08129 /* Project object */;
+}
