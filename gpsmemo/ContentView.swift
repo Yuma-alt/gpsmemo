@@ -2,29 +2,27 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var memos = [String]() // 保存されたメモのリスト
-    @State private var showingMemoEditor = false // メモ編集画面の表示状態
     @State private var selectedMemoIndex: Int? = nil // 選択されたメモのインデックス
 
     var body: some View {
         NavigationView {
-            List(memos.indices, id: \.self) { index in
-                Text(memos[index])
-                    .onTapGesture {
-                        selectedMemoIndex = index // 選択されたメモのインデックスをセット
-                        showingMemoEditor = true
+            List {
+                ForEach(memos.indices, id: \.self) { index in
+                    NavigationLink(destination: AddMemoView(memos: $memos, memoIndex: .constant(index))) {
+                        Text(memos[index])
                     }
+                }
+                .onDelete(perform: deleteMemo)
             }
-            .navigationTitle("memo")
-            .navigationBarItems(trailing: Button(action: {
-                selectedMemoIndex = nil // 新しいメモを追加するためにnilをセット
-                showingMemoEditor = true
-            }) {
+            .navigationTitle("")
+            .navigationBarItems(trailing: NavigationLink(destination: AddMemoView(memos: $memos, memoIndex: .constant(nil))) {
                 Image(systemName: "plus")
             })
         }
-        .sheet(isPresented: $showingMemoEditor) {
-            AddMemoView(memos: $memos, memoIndex: $selectedMemoIndex)
-        }
+    }
+
+    func deleteMemo(at offsets: IndexSet) {
+        memos.remove(atOffsets: offsets)
     }
 }
 
@@ -43,7 +41,7 @@ struct AddMemoView: View {
                     }
                 }
                 .padding()
-                .border(Color.gray, width: 1)
+                .border(Color.white, width: 1)
 
             HStack {
                 Spacer() // 左側のスペース
