@@ -45,15 +45,19 @@ struct AddMemoView: View {
                 .padding()
                 .border(Color.gray, width: 1)
 
-            Button("保存") {
-                if !memoText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                    if let index = memoIndex {
-                        memos[index] = memoText // 既存のメモを更新
-                    } else {
-                        memos.append(memoText) // 新しいメモを追加
+            HStack {
+                Spacer() // 左側のスペース
+                Button("保存") {
+                    if !memoText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                        if let index = memoIndex {
+                            memos[index] = memoText // 既存のメモを更新
+                        } else {
+                            memos.append(memoText) // 新しいメモを追加
+                        }
                     }
+                    presentationMode.wrappedValue.dismiss()
                 }
-                presentationMode.wrappedValue.dismiss()
+                Spacer() // 右側のスペース
             }
             .padding()
         }
