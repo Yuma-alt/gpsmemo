@@ -2,23 +2,47 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var memos = [String]() // 保存されたメモのリスト
-    @State private var selectedMemoIndex: Int? = nil // 選択されたメモのインデックス
+    @State private var showingAddMemoView = false // メモ追加ビューの表示状態
+    @State private var isEditingMemo = false // メモ編集中かどうか
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(memos.indices, id: \.self) { index in
-                    NavigationLink(destination: AddMemoView(memos: $memos, memoIndex: .constant(index))) {
-                        Text(memos[index])
+        VStack {
+            NavigationView {
+                List {
+                    ForEach(memos.indices, id: \.self) { index in
+                        NavigationLink(destination: AddMemoView(memos: $memos, memoIndex: .constant(index), isEditingMemo: $isEditingMemo)) {
+                            Text(memos[index])
+                                .lineLimit(1) // テキストを1行に制限
+                                .truncationMode(.tail) // 長いテキストは末尾を切り詰める
+                        }
                     }
+                    .onDelete(perform: deleteMemo)
                 }
-                .onDelete(perform: deleteMemo)
             }
-            .navigationTitle("")
-            .navigationBarItems(trailing: NavigationLink(destination: AddMemoView(memos: $memos, memoIndex: .constant(nil))) {
-                Image(systemName: "plus")
-            })
+
+            if !isEditingMemo {
+                addButton
+            }
         }
+        .sheet(isPresented: $showingAddMemoView) {
+            AddMemoView(memos: $memos, memoIndex: .constant(nil), isEditingMemo: $isEditingMemo)
+        }
+    }
+
+    var addButton: some View {
+        Button(action: {
+            showingAddMemoView = true
+            isEditingMemo = false
+        }) {
+            Image(systemName: "plus")
+                .resizable()
+                .frame(width: 24, height: 24)
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(Color.white)
+                .clipShape(Circle())
+        }
+        .padding(.bottom, 20)
     }
 
     func deleteMemo(at offsets: IndexSet) {
@@ -26,26 +50,23 @@ struct ContentView: View {
     }
 }
 
+// AddMemoViewの定義は同じ
 struct AddMemoView: View {
     @Binding var memos: [String]
-    @Binding var memoIndex: Int? // 編集するメモのインデックス
+    @Binding var memoIndex: Int?
+    @Binding var isEditingMemo: Bool
     @State private var memoText = ""
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack(alignment: .leading) {
             TextEditor(text: $memoText)
-                .onAppear {
-                    if let index = memoIndex {
-                        memoText = memos[index] // 編集するメモをロード
-                    }
-                }
                 .padding()
                 .border(Color.white, width: 1)
 
             HStack {
                 Spacer() // 左側のスペース
-                Button("保存") {
+                Button("Save") {
                     if !memoText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                         if let index = memoIndex {
                             memos[index] = memoText // 既存のメモを更新
@@ -54,10 +75,20 @@ struct AddMemoView: View {
                         }
                     }
                     presentationMode.wrappedValue.dismiss()
+                    isEditingMemo = false
                 }
                 Spacer() // 右側のスペース
             }
             .padding()
+        }
+        .onAppear {
+            isEditingMemo = true
+            if let index = memoIndex {
+                memoText = memos[index]
+            }
+        }
+        .onDisappear {
+            isEditingMemo = false
         }
     }
 }
