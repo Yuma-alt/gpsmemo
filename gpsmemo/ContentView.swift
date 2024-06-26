@@ -1,7 +1,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var memos = [String]() // 保存されたメモのリスト
+    @State private var memos = [
+        "This is a **bold** memo",
+        "This is *italic* memo"
+    ] // テスト用のマークダウン形式のテキスト
+
     @State private var showingAddMemoView = false // メモ追加ビューの表示状態
     @State private var isEditingMemo = false // メモ編集中かどうか
 
@@ -11,7 +15,7 @@ struct ContentView: View {
                 List {
                     ForEach(memos.indices, id: \.self) { index in
                         NavigationLink(destination: AddMemoView(memos: $memos, memoIndex: .constant(index), isEditingMemo: $isEditingMemo)) {
-                            Text(memos[index])
+                            MarkdownView(markdownText: memos[index])
                                 .lineLimit(1) // テキストを1行に制限
                                 .truncationMode(.tail) // 長いテキストは末尾を切り詰める
                         }
@@ -49,7 +53,6 @@ struct ContentView: View {
         memos.remove(atOffsets: offsets)
     }
 }
-
 // AddMemoViewの定義は同じ
 struct AddMemoView: View {
     @Binding var memos: [String]
@@ -96,5 +99,19 @@ struct AddMemoView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct MarkdownView: View {
+    var markdownText: String
+
+    var body: some View {
+        if let attributedString = try? AttributedString(markdown: markdownText) {
+            Text(attributedString)
+                .padding()
+        } else {
+            Text("Failed to render Markdown") // レンダリングに失敗した場合のエラー表示
+                .foregroundColor(.red)
+        }
     }
 }
