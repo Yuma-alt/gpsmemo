@@ -4,10 +4,10 @@ struct ContentView: View {
     @State private var memos = [
         "This is a **bold** memo",
         "This is *italic* memo"
-    ] // テスト用のマークダウン形式のテキスト
+    ]
 
-    @State private var showingAddMemoView = false // メモ追加ビューの表示状態
-    @State private var isEditingMemo = false // メモ編集中かどうか
+    @State private var showingAddMemoView = false
+    @State private var isEditingMemo = false
 
     var body: some View {
         VStack {
@@ -15,13 +15,14 @@ struct ContentView: View {
                 List {
                     ForEach(memos.indices, id: \.self) { index in
                         NavigationLink(destination: AddMemoView(memos: $memos, memoIndex: .constant(index), isEditingMemo: $isEditingMemo)) {
-                            MarkdownView(markdownText: memos[index])
-                                .lineLimit(1) // テキストを1行に制限
-                                .truncationMode(.tail) // 長いテキストは末尾を切り詰める
+                            MarkdownView(markdownText: getFirstLine(of: memos[index]))
+                                .lineLimit(1)
+                                .truncationMode(.tail)
                         }
                     }
                     .onDelete(perform: deleteMemo)
                 }
+                .navigationTitle("Memos")
             }
 
             if !isEditingMemo {
@@ -52,8 +53,12 @@ struct ContentView: View {
     func deleteMemo(at offsets: IndexSet) {
         memos.remove(atOffsets: offsets)
     }
+
+    func getFirstLine(of text: String) -> String {
+        return text.components(separatedBy: .newlines).first ?? text
+    }
 }
-// AddMemoViewの定義は同じ
+
 struct AddMemoView: View {
     @Binding var memos: [String]
     @Binding var memoIndex: Int?
@@ -68,19 +73,19 @@ struct AddMemoView: View {
                 .border(Color.white, width: 1)
 
             HStack {
-                Spacer() // 左側のスペース
+                Spacer()
                 Button("Save") {
                     if !memoText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                         if let index = memoIndex {
-                            memos[index] = memoText // 既存のメモを更新
+                            memos[index] = memoText
                         } else {
-                            memos.append(memoText) // 新しいメモを追加
+                            memos.append(memoText)
                         }
                     }
                     presentationMode.wrappedValue.dismiss()
                     isEditingMemo = false
                 }
-                Spacer() // 右側のスペース
+                Spacer()
             }
             .padding()
         }
@@ -96,12 +101,6 @@ struct AddMemoView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
 struct MarkdownView: View {
     var markdownText: String
 
@@ -113,5 +112,11 @@ struct MarkdownView: View {
             Text("Failed to render Markdown") // レンダリングに失敗した場合のエラー表示
                 .foregroundColor(.red)
         }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
