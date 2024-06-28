@@ -22,7 +22,6 @@ struct ContentView: View {
                     }
                     .onDelete(perform: deleteMemo)
                 }
-                .navigationTitle("Memos")
             }
 
             if !isEditingMemo {
