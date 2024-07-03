@@ -211,7 +211,6 @@ struct ContentView: View {
                     .padding(.bottom, 16)
                 }
             }
-            .navigationTitle("Memos")
         }
         .sheet(isPresented: $showingAddMemoView) {
             AddMemoView(viewModel: viewModel, memo: nil)
