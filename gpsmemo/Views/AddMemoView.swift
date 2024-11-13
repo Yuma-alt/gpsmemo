@@ -35,7 +35,6 @@ struct AddMemoView: View {
                     
                     if let location = memo.location {
                         Section(header: Text("Location")) {
-                            Text("Latitude: \(location.latitude), Longitude: \(location.longitude)")
                             if let address = viewModel.currentAddress {
                                 Text("Address: \(address)")
                             }
