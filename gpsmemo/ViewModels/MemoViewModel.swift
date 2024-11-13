@@ -8,6 +8,8 @@ class MemoViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var selectedCategoryId: UUID?
     private var locationManager = CLLocationManager()
     @Published var currentLocation: CLLocation?
+    private let geocoder = CLGeocoder()
+    @Published var currentAddress: String?
 
     override init() {
         super.init()
@@ -24,6 +26,7 @@ class MemoViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             currentLocation = location
+            reverseGeocode(location: location)
         }
     }
 
@@ -91,6 +94,20 @@ class MemoViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         if let savedCategories = UserDefaults.standard.data(forKey: "savedCategories"),
            let decodedCategories = try? JSONDecoder().decode([Category].self, from: savedCategories) {
             categories = decodedCategories
+        }
+    }
+
+    private func reverseGeocode(location: CLLocation) {
+        geocoder.reverseGeocodeLocation(location) { [weak self] placemarks, error in
+            if let error = error {
+                print("Failed to reverse geocode location: \(error.localizedDescription)")
+                return
+            }
+            if let placemark = placemarks?.first {
+                self?.currentAddress = [placemark.administrativeArea, placemark.locality, placemark.subLocality]
+                    .compactMap { $0 }
+                    .joined(separator: " ")
+            }
         }
     }
 }
