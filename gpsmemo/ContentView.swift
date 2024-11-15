@@ -26,6 +26,10 @@ struct ContentView: View {
                             }
                         }
                         .onDelete(perform: viewModel.deleteMemo)
+                        .onMove(perform: moveMemo)
+                    }
+                    .toolbar {
+                        EditButton()
                     }
                 }
                 
@@ -78,7 +82,7 @@ struct ContentView: View {
             viewModel.requestLocation()
         }
     }
-    
+
     private var categoryPicker: some View {
         Picker("Category", selection: $viewModel.selectedCategoryId) {
             Text("All").tag(UUID?.none)
@@ -96,6 +100,10 @@ struct ContentView: View {
         } else {
             return viewModel.memos
         }
+    }
+    
+    private func moveMemo(from source: IndexSet, to destination: Int) {
+        viewModel.memos.move(fromOffsets: source, toOffset: destination)
     }
 }
 
