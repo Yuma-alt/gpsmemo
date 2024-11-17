@@ -71,7 +71,7 @@ class MemoViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         saveMemos()
     }
 
-    private func saveMemos() {
+    func saveMemos() {
         if let encoded = try? JSONEncoder().encode(memos) {
             UserDefaults.standard.set(encoded, forKey: "savedMemos")
         }

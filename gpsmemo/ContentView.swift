@@ -103,7 +103,31 @@ struct ContentView: View {
     }
     
     private func moveMemo(from source: IndexSet, to destination: Int) {
-        viewModel.memos.move(fromOffsets: source, toOffset: destination)
+        if viewModel.selectedCategoryId == nil {
+            // カテゴリが未選択の場合、viewModel.memos を直接操作
+            viewModel.memos.move(fromOffsets: source, toOffset: destination)
+        } else {
+            // フィルタリングされたメモを操作
+            var filtered = filteredMemos
+            filtered.move(fromOffsets: source, toOffset: destination)
+            
+            // viewModel.memos を更新
+            var newMemos: [LocationMemo] = []
+            var filteredIndex = 0
+            for memo in viewModel.memos {
+                if memo.categoryId == viewModel.selectedCategoryId {
+                    // 選択されたカテゴリのメモは、並べ替え後の順序で追加
+                    newMemos.append(filtered[filteredIndex])
+                    filteredIndex += 1
+                } else {
+                    // その他のメモはそのまま追加
+                    newMemos.append(memo)
+                }
+            }
+            viewModel.memos = newMemos
+            // メモの保存
+            viewModel.saveMemos()
+        }
     }
 }
 
