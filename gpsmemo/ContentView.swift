@@ -30,7 +30,9 @@ struct ContentView: View {
                         .onMove(perform: moveMemo)
                     }
                     .toolbar {
-                        EditButton()
+                        ToolbarItemGroup(placement: .navigationBarTrailing) {
+                            EditButton()
+                        }
                     }
                 }
                 
