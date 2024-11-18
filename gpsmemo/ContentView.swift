@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var showingAddMemoView = false
     @State private var showingAddCategoryView = false
     @State private var activeMemoIndex: Int?
+    @State private var showingCategoryListView = false
 
     var body: some View {
         NavigationView {
@@ -84,13 +85,24 @@ struct ContentView: View {
     }
 
     private var categoryPicker: some View {
-        Picker("Category", selection: $viewModel.selectedCategoryId) {
-            Text("All").tag(UUID?.none)
-            ForEach(viewModel.categories) { category in
-                Text(category.name).tag(category.id as UUID?)
+        HStack {
+            Picker("Category", selection: $viewModel.selectedCategoryId) {
+                Text("All").tag(UUID?.none)
+                ForEach(viewModel.categories) { category in
+                    Text(category.name).tag(category.id as UUID?)
+                }
+            }
+            .pickerStyle(MenuPickerStyle())
+
+            Button(action: {
+                showingCategoryListView = true
+            }) {
+                Image(systemName: "pencil")
+            }
+            .sheet(isPresented: $showingCategoryListView) {
+                CategoryListView(viewModel: viewModel)
             }
         }
-        .pickerStyle(MenuPickerStyle())
         .padding()
     }
     
