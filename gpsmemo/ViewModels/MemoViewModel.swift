@@ -76,6 +76,13 @@ class MemoViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
             UserDefaults.standard.set(encoded, forKey: "savedMemos")
         }
     }
+    
+    func updateCategory(_ category: Category) {
+        if let index = categories.firstIndex(where: { $0.id == category.id }) {
+            categories[index] = category
+            saveCategories()
+        }
+    }
 
     private func loadMemos() {
         if let savedMemos = UserDefaults.standard.data(forKey: "savedMemos"),
