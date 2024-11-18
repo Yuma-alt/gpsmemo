@@ -1,10 +1,23 @@
 import SwiftUI
 
+enum EditingCategory: Identifiable {
+    case new
+    case edit(Category)
+
+    var id: UUID {
+        switch self {
+        case .new:
+            return UUID()
+        case .edit(let category):
+            return category.id
+        }
+    }
+}
+
 struct CategoryListView: View {
     @ObservedObject var viewModel: MemoViewModel
     @Environment(\.presentationMode) var presentationMode
-    @State private var showingAddCategoryView = false
-    @State private var editingCategory: Category?
+    @State private var editingCategory: EditingCategory?
 
     var body: some View {
         NavigationView {
@@ -14,8 +27,7 @@ struct CategoryListView: View {
                         Text(category.name)
                         Spacer()
                         Button(action: {
-                            editingCategory = category
-                            showingAddCategoryView = true
+                            editingCategory = .edit(category)
                         }) {
                             Image(systemName: "pencil")
                         }
@@ -23,19 +35,31 @@ struct CategoryListView: View {
                 }
                 .onDelete(perform: deleteCategory)
             }
-            .navigationBarTitle("Edit Categories", displayMode: .inline)
-            .navigationBarItems(
-                leading: Button("Close") {
-                    presentationMode.wrappedValue.dismiss()
-                },
-                trailing: Button(action: {
-                    showingAddCategoryView = true
-                }) {
-                    Image(systemName: "plus")
+            .navigationTitle("Edit Categories")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Close") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }
-            )
-            .sheet(isPresented: $showingAddCategoryView) {
-                AddCategoryView(viewModel: viewModel, category: editingCategory)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        editingCategory = .new
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .sheet(item: $editingCategory) { editingCategory in
+                NavigationView {
+                    switch editingCategory {
+                    case .new:
+                        AddCategoryView(viewModel: viewModel, category: nil)
+                    case .edit(let category):
+                        AddCategoryView(viewModel: viewModel, category: category)
+                    }
+                }
             }
         }
     }

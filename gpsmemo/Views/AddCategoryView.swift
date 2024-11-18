@@ -2,33 +2,37 @@ import SwiftUI
 
 struct AddCategoryView: View {
     @ObservedObject var viewModel: MemoViewModel
-    @State private var categoryName: String
     @Environment(\.presentationMode) var presentationMode
+    @State private var categoryName: String = ""
     var category: Category?
 
-    init(viewModel: MemoViewModel, category: Category? = nil) {
-        self.viewModel = viewModel
-        self.category = category
-        _categoryName = State(initialValue: category?.name ?? "")
-    }
-
     var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text(category != nil ? "Edit Category" : "New Category")) {
-                    TextField("Category Name", text: $categoryName)
+        Form {
+            Section(header: Text(category != nil ? "Edit Category" : "New Category")) {
+                TextField("Category Name", text: $categoryName)
+            }
+        }
+        .navigationTitle(category != nil ? "Edit Category" : "Add Category")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button("Cancel") {
+                    presentationMode.wrappedValue.dismiss()
                 }
             }
-            .navigationBarTitle(category != nil ? "Edit Category" : "Add Category", displayMode: .inline)
-            .navigationBarItems(
-                leading: Button("Cancel") {
-                    presentationMode.wrappedValue.dismiss()
-                },
-                trailing: Button("Save") {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Save") {
                     saveCategory()
                 }
                 .disabled(categoryName.isEmpty)
-            )
+            }
+        }
+        .onAppear {
+            if let category = category {
+                categoryName = category.name
+            } else {
+                categoryName = ""
+            }
         }
     }
 
