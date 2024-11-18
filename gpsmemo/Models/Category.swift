@@ -1,11 +1,6 @@
 import Foundation
 
-struct Category: Identifiable, Codable {
-    let id: UUID
+struct Category: Identifiable, Codable, Equatable {
+    var id = UUID()
     var name: String
-    
-    init(id: UUID = UUID(), name: String) {
-        self.id = id
-        self.name = name
-    }
 }
