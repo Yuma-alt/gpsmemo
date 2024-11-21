@@ -4,12 +4,12 @@ enum EditingCategory: Identifiable {
     case new
     case edit(Category)
 
-    var id: UUID {
+    var id: String {
         switch self {
         case .new:
-            return UUID()
+            return "new"
         case .edit(let category):
-            return category.id
+            return category.id.uuidString
         }
     }
 }
