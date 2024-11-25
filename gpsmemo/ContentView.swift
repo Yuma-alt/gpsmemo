@@ -79,7 +79,7 @@ struct ContentView: View {
             AddMemoView(viewModel: viewModel, memo: nil)
         }
         .sheet(isPresented: $showingAddCategoryView) {
-            AddCategoryView(viewModel: viewModel)
+            CategoryListView(viewModel: viewModel)
         }
         .onAppear {
             viewModel.requestLocation()
@@ -95,15 +95,6 @@ struct ContentView: View {
                 }
             }
             .pickerStyle(MenuPickerStyle())
-
-            Button(action: {
-                showingCategoryListView = true
-            }) {
-                Image(systemName: "pencil")
-            }
-            .sheet(isPresented: $showingCategoryListView) {
-                CategoryListView(viewModel: viewModel)
-            }
         }
         .padding()
     }
