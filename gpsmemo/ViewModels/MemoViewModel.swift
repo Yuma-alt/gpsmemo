@@ -62,13 +62,18 @@ class MemoViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     func deleteCategory(_ category: Category) {
         categories.removeAll { $0.id == category.id }
-        memos.indices.forEach { index in
+        saveCategories()
+        
+        for index in memos.indices {
             if memos[index].categoryId == category.id {
                 memos[index].categoryId = nil
             }
         }
-        saveCategories()
         saveMemos()
+        
+        if selectedCategoryId == category.id {
+            selectedCategoryId = nil
+        }
     }
 
     func saveMemos() {
